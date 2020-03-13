@@ -11,6 +11,9 @@ class LoginScreen extends StatefulWidget {
 class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return null;
+    return Container(
+      margin: EdgeInsets.all(20.0),
+      child: Text('all things are so good buddy! In Login Screen'),
+    );
   }
 }
