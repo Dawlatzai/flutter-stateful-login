@@ -13,7 +13,13 @@ class LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(20.0),
-      child: Text('all things are so good buddy! In Login Screen'),
+      child: Form(
+        child: Column(
+          children: <Widget>[
+            
+          ],
+        ),
+      ),
     );
   }
 }
