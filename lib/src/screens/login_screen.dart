@@ -49,6 +49,7 @@ class LoginScreenState extends State<LoginScreen> {
 
   Widget _submitButton() {
     return RaisedButton(
+      color: Colors.blue,
       child: Text('Submit!'),
       onPressed: () {},
     );
