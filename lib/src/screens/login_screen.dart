@@ -17,8 +17,8 @@ class LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: <Widget>[
             _emailField(),
-            _passwordField(),
-            _submitButton(),
+            // _passwordField(),
+            // _submitButton(),
           ],
         ),
       ),
@@ -26,6 +26,13 @@ class LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _emailField() {
+    return TextField(
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecoration(
+        labelText: 'Email Adress',
+        hintText: 'you@example.com',
+      ),
+    );
 
   }
 
