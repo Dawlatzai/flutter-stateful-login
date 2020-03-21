@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../mixins/validation_mixin.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class LoginScreen extends StatefulWidget {
   }
 }
 
-class LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> with ValidationMixin {
   final _formKey = GlobalKey<FormState>();
   String email = '';
   String password = '';
@@ -39,11 +40,7 @@ class LoginScreenState extends State<LoginScreen> {
         labelText: 'Email Adress',
         hintText: 'you@example.com',
       ),
-      validator: (value) {
-        if (!value.contains('@')) {
-          return 'Please enter a valid email address';
-        }
-      },
+      validator: validateEmail,
       onSaved: (value) {
         email = value;
       },
@@ -57,11 +54,7 @@ class LoginScreenState extends State<LoginScreen> {
         labelText: 'Password',
         hintText: 'Password',
       ),
-      validator: (value) {
-        if (value.length < 4) {
-          return 'Please enter a password greather than 4 characters';
-        }
-      },
+      validator: validatePassword,
       onSaved: (value) {
         password = value;
       },
@@ -75,7 +68,7 @@ class LoginScreenState extends State<LoginScreen> {
       onPressed: () {
         if (_formKey.currentState.validate()) {
           _formKey.currentState.save();
-          print('I am very glad to get my $email and $password and pull it to API');
+          print('I am very glad to get my $email and $password, pull it to API');
           // Scaffold.of(context)
           //     .showSnackBar(SnackBar(content: Text('Processing Data')));
         }
