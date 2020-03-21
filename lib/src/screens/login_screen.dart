@@ -42,6 +42,9 @@ class LoginScreenState extends State<LoginScreen> {
           return 'Please enter a valid email address';
         }
       },
+      onSaved: (value) {
+        print(value);
+      },
     );
   }
 
@@ -57,6 +60,9 @@ class LoginScreenState extends State<LoginScreen> {
           return 'Please enter a password greather than 4 characters';
         }
       },
+      onSaved: (value) {
+        print(value);
+      },
     );
   }
 
@@ -65,7 +71,11 @@ class LoginScreenState extends State<LoginScreen> {
       color: Colors.blue,
       child: Text('Submit!'),
       onPressed: () {
-        _formKey.currentState.validate();
+        if (_formKey.currentState.validate()) {
+          _formKey.currentState.save();
+          // Scaffold.of(context)
+          //     .showSnackBar(SnackBar(content: Text('Processing Data')));
+        }
       },
     );
   }
