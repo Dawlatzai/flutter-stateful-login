@@ -53,7 +53,6 @@ class LoginScreenState extends State<LoginScreen> {
         hintText: 'Password',
       ),
       validator: (value) {
-        print(value);
         if (value.length < 4) {
           return 'Please enter a password greather than 4 characters';
         }
