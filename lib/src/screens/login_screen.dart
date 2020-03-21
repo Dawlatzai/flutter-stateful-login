@@ -10,14 +10,14 @@ class LoginScreen extends StatefulWidget {
 
 class LoginScreenState extends State<LoginScreen> {
 
-  final formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(20.0),
       child: Form(
-        key: formKey,
+        key: _formKey,
         child: Column(
           children: <Widget>[
             _emailField(),
@@ -36,7 +36,13 @@ class LoginScreenState extends State<LoginScreen> {
       decoration: InputDecoration(
         labelText: 'Email Adress',
         hintText: 'you@example.com',
-      ),
+      ), 
+      validator: (value) {
+        if (value.isEmpty) {
+          return 'Please enter some text';
+        }
+        return null;
+      },
     );
 
   }
@@ -48,6 +54,12 @@ class LoginScreenState extends State<LoginScreen> {
         labelText: 'Password',
         hintText: 'Password',
       ),
+      validator: (value) {
+        if (value.isEmpty) {
+          return 'Please enter some text';
+        }
+        return null;
+        },
     );
 
   }
@@ -59,4 +71,5 @@ class LoginScreenState extends State<LoginScreen> {
       onPressed: () {},
     );
   }
+
 }
