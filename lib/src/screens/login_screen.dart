@@ -9,6 +9,8 @@ class LoginScreen extends StatefulWidget {
 
 class LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
+  String email = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class LoginScreenState extends State<LoginScreen> {
         }
       },
       onSaved: (value) {
-        print(value);
+        email = value;
       },
     );
   }
@@ -61,7 +63,7 @@ class LoginScreenState extends State<LoginScreen> {
         }
       },
       onSaved: (value) {
-        print(value);
+        password = value;
       },
     );
   }
@@ -73,6 +75,7 @@ class LoginScreenState extends State<LoginScreen> {
       onPressed: () {
         if (_formKey.currentState.validate()) {
           _formKey.currentState.save();
+          print('I am very glad to get my $email and $password and pull it to API');
           // Scaffold.of(context)
           //     .showSnackBar(SnackBar(content: Text('Processing Data')));
         }
