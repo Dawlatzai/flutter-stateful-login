@@ -31,7 +31,7 @@ class LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _emailField() {
-    return TextField(
+    return TextFormField(
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         labelText: 'Email Adress',
@@ -48,7 +48,7 @@ class LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _passwordField() {
-    return TextField(
+    return TextFormField(
       obscureText: true,
       decoration: InputDecoration(
         labelText: 'Password',
