@@ -68,7 +68,8 @@ class LoginScreenState extends State<LoginScreen> with ValidationMixin {
       onPressed: () {
         if (_formKey.currentState.validate()) {
           _formKey.currentState.save();
-          print('I am very glad to get my $email and $password, pull it to API');
+          print(
+              'I am very glad to get my $email and $password, pull it to API');
           // Scaffold.of(context)
           //     .showSnackBar(SnackBar(content: Text('Processing Data')));
         }
